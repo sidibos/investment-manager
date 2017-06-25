@@ -1,4 +1,11 @@
 {
+  "name": "sidibos/investment-manager",
+  "authors": [
+    {
+      "name": "Moussa Sidibe",
+      "email": "sidibemousse@hotmail.com"
+    }
+  ],
   "require": {
     "php": ">=5.6.4"
   },

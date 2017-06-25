@@ -1,0 +1,13 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git://github.com/philsturgeon/framework.git"
+    }
+  ],
+  "require": {
+    "laravel/framework": "dev-feature/kittens",
+    "other/stuff" : "1.0.*@stable"
+  },
+  "minimum-stability": "dev"
+}

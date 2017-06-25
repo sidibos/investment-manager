@@ -3,10 +3,26 @@ namespace LendInvest;
 
 class Investment
 {
+    /**
+     * @var DateTime
+     */
     public $investmentStartDate;
-    public $moneyInvested;
-    public $tranche;
 
+    /**
+     * @var Money
+     */
+    public $moneyInvested;
+
+    /**
+     * @var LoanTranche
+     */
+    public $loanTranche;
+
+    /**
+     * @param LoanTranche $loanTranche
+     * @param Money $moneyInvested
+     * @param $investmentStartDate
+     */
     public function __construct(LoanTranche $loanTranche, Money $moneyInvested, $investmentStartDate)
     {
         $this->loanTranche          = $loanTranche;
@@ -14,6 +30,12 @@ class Investment
         $this->investmentStartDate  = $investmentStartDate;
     }
 
+    /**
+     * calculate investors monthly interests
+     * @param $fromDate
+     * @param $toDate
+     * @return int|string
+     */
     public function getMonthlyInterests($fromDate, $toDate)
     {
         if(strtotime($this->investmentStartDate) < strtotime($toDate)){
@@ -37,6 +59,10 @@ class Investment
         return 0;
     }
 
+    /**
+     * return Money invested
+     * @return Money
+     */
     public function getMoneyInvested()
     {
         return $this->moneyInvested;

@@ -25,13 +25,13 @@ class LoanTest extends TestCase
     {
         $this->expectException('Exception');
         $loanObj  = new Loan($this->loanStartDate, $this->loanEndDate);
-        $loanObj->isOpen();
+        $loanObj->checkLoanIsOpened();
     }
 
     public function testLoanIsOpen()
     {
         $loanObj  = new Loan('01-06-2017', date('Y-m-d H:i:s', strtotime('+1 day')));
-        $loanObj->isOpen();
+        $loanObj->checkLoanIsOpened();
         $this->assertTrue(true);
     }
 }

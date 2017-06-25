@@ -12,7 +12,7 @@ use \LendInvest\InvestorInterestCalculator;
 
 date_default_timezone_set('America/New_York');
 
-$loan = new Loan('01-10-2015', '15-11-2015');
+$loan = new Loan('01-10-2015', date('d-m-Y', strtotime('+1 day')));
 
 $trancheA = new LoanTranche(new Money(1000), $loan, 3);
 $trancheB = new LoanTranche(new Money(1000), $loan, 6);

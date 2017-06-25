@@ -20,7 +20,7 @@ class InvestorInterestCalculatorTest extends TestCase
 
     public function testInvestorEarnings()
     {
-        $loan = new Loan('01-05-2017', date('d-m-Y', strtotime('+1 dat')));
+        $loan = new Loan('01-05-2017', date('d-m-Y', strtotime('+1 day')));
         $loanTranche = new LoanTranche(new Money(1000), $loan, 6);
         $investor = new Investor('Investor 1', new InvestorWallet(new Money(2000)));
         $investor->investIn($loanTranche, new Money(500), '01-05-2017');
